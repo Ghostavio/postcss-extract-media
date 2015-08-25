@@ -92,3 +92,6 @@ And then use the print.css like this:
 ```html
 <link rel="stylesheet" href="print.css" media="print">
 ```
+
+## License
+MIT © [Gustavo Siqueira](http://twitter.com/Dr_Gustavo)
