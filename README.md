@@ -7,7 +7,7 @@ This is really specific for my needs right now and it may evolve for a better op
 ## Installation
 
 ```shell
-npm install postcss-print
+npm install postcss-print --save-dev
 ```
 
 
