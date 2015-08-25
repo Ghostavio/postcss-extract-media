@@ -31,7 +31,7 @@ generatePrint: {
 }
 ```
 
-#### `pure` (default: `false`)
+#### `remove` (default: `false`)
 
 This option removes all occurences of `@media print` from your original css files. I use it like this (with Grunt):
 
