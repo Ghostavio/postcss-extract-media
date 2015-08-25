@@ -2,7 +2,7 @@
 
 [`PostCSS`](https://github.com/postcss/postcss) plugin to extract all `@media print` from your stylesheets and move it to a `print.css` file
 
-This is really specific for my needs right now and it may evolve for a better opensource plugin, but right now I don't really recommend it's use, as it's not even tested.
+This is alpha stage software to solve some of my specific needs. Jump in the issues section to collaborate if it also solve yours.
 
 ## Installation
 
