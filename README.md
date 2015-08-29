@@ -1,6 +1,6 @@
-# postcss-print
+# postcss-split (this could be the new name)
 
-[`PostCSS`](https://github.com/postcss/postcss) plugin to extract all `@media print` from your stylesheets and move it to a `print.css` file
+[`PostCSS`](https://github.com/postcss/postcss) plugin to extract `@media` queries from your stylesheets and move it to a `separate.css` file
 
 This is alpha stage software to solve some of my specific needs. Jump in the issues section to collaborate if it also solve yours.
 
@@ -15,35 +15,21 @@ npm install postcss-print --save-dev
 
 ### Options
 
-#### `generate` (default: `false`)
+#### `match`
 
-This is the option that generates the new print.css file, I use it like this (with Grunt):
+This is the match for the media query:
 
 ```js
-generatePrint: {
-    options: {
-        processors: [
-            require('postcss-print')({ generate: true })
-        ]
-    },
-    src  : 'public/css/dist/all.min.css',
-    dest : 'public/css/dist/print.css'
-}
+'^print'
+'screen and (max-width: 300px)'
 ```
 
-#### `remove` (default: `false`)
+#### `prefix`
 
-This option removes all occurences of `@media print` from your original css files. I use it like this (with Grunt):
+This prefix will be appended to the filename:
 
 ```js
-removePrint: {
-    options: {
-        processors: [
-            require('postcss-print')({ remove: true })
-        ]
-    },
-    src: 'public/css/dist/*.min.css'
-}
+'-print' => main.css will be saved as main-print.css
 ```
 
 ### Using
@@ -59,27 +45,12 @@ module.exports = function(grunt) {
                 map  : true,
                 diff : true,
                 processors: [
-                    require('autoprefixer-core')({ browsers: ['> 1%', 'last 1 version', 'ie 8', 'ie 9'] })
+                    require('autoprefixer-core')({ browsers: ['> 1%', 'last 1 version', 'ie 8', 'ie 9'] }),
+                    require('postcss-print')({match: '^print', prefix: '-print'}),
+                    require('postcss-print')({match: '(min-width: 568px)', prefix: '-tablet'})
                 ]
             },
             src: 'public/css/dist/*.css'
-        },
-        generatePrint: {
-            options: {
-                processors: [
-                    require('postcss-print')({ generate: true })
-                ]
-            },
-            src  : 'public/css/dist/all.min.css',
-            dest : 'public/css/dist/print.css'
-        },
-        removePrint: {
-            options: {
-                processors: [
-                    require('postcss-print')({ remove: true })
-                ]
-            },
-            src: 'public/css/dist/*.min.css'
         }
     });
 
@@ -90,7 +61,7 @@ module.exports = function(grunt) {
 And then use the print.css like this:
 
 ```html
-<link rel="stylesheet" href="print.css" media="print">
+<link rel="stylesheet" href="main-print.css" media="print">
 ```
 
 ## License

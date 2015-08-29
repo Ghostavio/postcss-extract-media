@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/Ghostavio/postcss-print",
   "dependencies": {
+    "file-save": "^0.2.0",
+    "path": "^0.11.14",
     "postcss": "^5.0.2"
   },
   "devDependencies": {
