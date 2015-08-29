@@ -1,4 +1,4 @@
-# postcss-split (this could be the new name)
+# postcss-extract-media
 
 [`PostCSS`](https://github.com/postcss/postcss) plugin to extract `@media` queries from your stylesheets and move it to a `separate.css` file
 
