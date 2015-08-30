@@ -1,6 +1,6 @@
 {
   "name": "postcss-extract-media",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "PostCSS plugin to extract media from your css into a separated file.",
   "keywords": [
     "postcss",

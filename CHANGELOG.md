@@ -15,3 +15,7 @@ Yay, now it's a little bit more stable.
 
 There are still work to be done here, but it's way better than the first version.
 Thanks to [@davidecantoni](https://github.com/davidecantoni/), [@ai](https://github.com/ai/) and [@joaocunha](https://github.com/joaocunha/) for the help.
+
+# 0.0.3
+
+Typo on postcss API call (`walksAtRules` instead of `walkAtRules`). So previous version is completely broken, use this one instead.
