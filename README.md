@@ -7,7 +7,7 @@ This is alpha stage software to solve some of my specific needs. Jump in the iss
 ## Installation
 
 ```shell
-npm install postcss-print --save-dev
+npm install postcss-extract-media --save-dev
 ```
 
 ## How to use
