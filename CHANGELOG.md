@@ -19,3 +19,7 @@ Thanks to [@davidecantoni](https://github.com/davidecantoni/), [@ai](https://git
 # 0.0.3
 
 Typo on postcss API call (`walksAtRules` instead of `walkAtRules`). So previous version is completely broken, use this one instead.
+
+# 0.0.4
+
+Apparently there was a problem with the way we're writing the new file, it should be fixed now.
