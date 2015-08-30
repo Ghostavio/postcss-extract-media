@@ -49,7 +49,11 @@ module.exports = function(grunt) {
                     require('postcss-print')({ match: '(min-width: 568px)', prefix: '-tablet' })
                 ]
             },
-            src: ['public/css/dist/*.css', '!public/css/dist/*-print.css']
+            src: [
+                'public/css/dist/*.css',
+                '!public/css/dist/*-print.css',
+                '!public/css/dist/*.min.css'
+            ]
         }
     });
 
