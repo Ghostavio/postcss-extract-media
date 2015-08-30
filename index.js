@@ -2,7 +2,7 @@ var postcss  = require('postcss');
 var fileSave = require('file-save');
 var path     = require('path');
 
-module.exports = postcss.plugin('postcss-print', function (opts) {
+module.exports = postcss.plugin('postcss-extract-media', function (opts) {
 
     return function(css, result) {
         // get fileinfo
@@ -12,13 +12,14 @@ module.exports = postcss.plugin('postcss-print', function (opts) {
         var newFile = fileSave(fileinfo.dir + '/' + fileinfo.name + opts.prefix + fileinfo.ext, '@charset "UTF-8"');
 
         // let's loop through all rules and extract all @media print
-        css.eachAtRule(function(rule) {
+        css.walksAtRules(function(rule) {
             if (rule.name.match(/^media/) && rule.params.match(opts.match)) {
                 // add nodes to print file
                 newFile.write(rule.nodes.toString(), 'utf8');
 
+                // TODO: maybe add a option (default true) to remove occurences
                 // let's remove all occurences of @media print from the current css
-                rule.remove;
+                rule.remove();
             }
         });
         newFile.end();

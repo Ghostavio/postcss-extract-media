@@ -10,7 +10,6 @@ This is alpha stage software to solve some of my specific needs. Jump in the iss
 npm install postcss-print --save-dev
 ```
 
-
 ## How to use
 
 ### Options
@@ -46,8 +45,8 @@ module.exports = function(grunt) {
                 diff : true,
                 processors: [
                     require('autoprefixer-core')({ browsers: ['> 1%', 'last 1 version', 'ie 8', 'ie 9'] }),
-                    require('postcss-print')({match: '^print', prefix: '-print'}),
-                    require('postcss-print')({match: '(min-width: 568px)', prefix: '-tablet'})
+                    require('postcss-print')({ match: '^print', prefix: '-print' }),
+                    require('postcss-print')({ match: '(min-width: 568px)', prefix: '-tablet' })
                 ]
             },
             src: 'public/css/dist/*.css'

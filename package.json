@@ -1,25 +1,26 @@
 {
-  "name": "postcss-print",
-  "version": "0.0.1",
-  "description": "PostCSS plugin to extract all print css into a separated file.",
+  "name": "postcss-extract-media",
+  "version": "0.0.2",
+  "description": "PostCSS plugin to extract media from your css into a separated file.",
   "keywords": [
     "postcss",
     "css",
     "postcss-plugin",
     "print",
     "media print",
+    "media query",
     "extract"
   ],
   "author": "Ghostavio <gustavo.anacleto@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Ghostavio/postcss-print.git"
+    "url": "https://github.com/Ghostavio/postcss-extract-media.git"
   },
   "bugs": {
-    "url": "https://github.com/Ghostavio/postcss-print/issues"
+    "url": "https://github.com/Ghostavio/postcss-extract-media/issues"
   },
-  "homepage": "https://github.com/Ghostavio/postcss-print",
+  "homepage": "https://github.com/Ghostavio/postcss-extract-media",
   "dependencies": {
     "file-save": "^0.2.0",
     "path": "^0.11.14",
