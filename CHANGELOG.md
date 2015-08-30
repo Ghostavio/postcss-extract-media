@@ -5,6 +5,9 @@ The first release. Don't use it.
 # 0.0.2
 
 Yay, now it's a little bit more stable.
+
+**Changes on this version are not backwards compatible with the previous version, but I'm still not comfortable changing it to 1.0.0 because I don't believe it's already at that stage. Sorry for breaking semantic versioning.**
+
 - Changed a the workflow of the app ([PR #8](https://github.com/Ghostavio/postcss-extract-media/pull/8));
 - Changed the name of the plugin to *postcss-extract-media* (Closes [#5](https://github.com/Ghostavio/postcss-extract-media/issues/5));
 - Use PostCSS 5.0 API (Closes [#2](https://github.com/Ghostavio/postcss-extract-media/issues/2));
