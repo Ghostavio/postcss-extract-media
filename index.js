@@ -1,31 +1,26 @@
-var postcss = require('postcss');
+var postcss  = require('postcss');
+var fileSave = require('file-save');
+var path     = require('path');
 
 module.exports = postcss.plugin('postcss-print', function (opts) {
-    opts = opts || {};
 
-    return function (css) {
-        // let's start our new file with @charset "UTF-8"
-        var newFile = postcss.parse('@charset "UTF-8"');
+    return function(css, result) {
+        // get fileinfo
+        var fileinfo = path.parse(result.opts.to);
+
+        // let's start our new file with @charset "UTF-8" and save file in the same dir appending a prefix
+        var newFile = fileSave(fileinfo.dir + '/' + fileinfo.name + opts.prefix + fileinfo.ext, '@charset "UTF-8"');
 
         // let's loop through all rules and extract all @media print
-        css.eachAtRule(function(rule, i) {
-            if (rule.name === 'media' && rule.params === 'print') {
-                // let's remove all occurences of @media print from the original css
-                if (opts.remove) {
-                    rule.removeSelf();
-                } else {
-                    // let' append all @media print rules to the newFile
-                    newFile.append(postcss.parse(rule).toResult().css);
-                }
+        css.eachAtRule(function(rule) {
+            if (rule.name.match(/^media/) && rule.params.match(opts.match)) {
+                // add nodes to print file
+                newFile.write(rule.nodes.toString(), 'utf8');
+
+                // let's remove all occurences of @media print from the current css
+                rule.remove;
             }
         });
-
-        if (opts.generate) {
-            // let's delete the whole original css sheet
-            css.removeAll();
-
-            // let's append all the @media print css to our new generated sheet
-            css.append(newFile.toResult().css);
-        }
+        newFile.end();
     };
 });
