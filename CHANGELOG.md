@@ -11,4 +11,4 @@ Yay, now it's a little bit more stable.
 - Writing file from within the plugin now, so no need to `append` leaving all the work for Grunt as it was happening before (Closes [#3](https://github.com/Ghostavio/postcss-extract-media/issues/3));
 
 There are still work to be done here, but it's way better than the first version.
-Thanks to @davidecantoni, @ai and @joaocunha for the help.
+Thanks to [@davidecantoni](https://github.com/davidecantoni/), [@ai](https://github.com/ai/) and [@joaocunha](https://github.com/joaocunha/) for the help.
