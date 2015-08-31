@@ -1,6 +1,6 @@
 {
   "name": "postcss-extract-media",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "PostCSS plugin to extract media from your css into a separated file.",
   "keywords": [
     "postcss",
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/Ghostavio/postcss-extract-media",
   "dependencies": {
-    "file-save": "git+https://git@github.com:Ghostavio/file-save-stream.git",
+    "file-save": "^0.2.0",
     "path": "^0.11.14",
     "postcss": "^5.0.2"
   },

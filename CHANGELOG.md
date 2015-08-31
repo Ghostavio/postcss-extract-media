@@ -23,3 +23,7 @@ Typo on postcss API call (`walksAtRules` instead of `walkAtRules`). So previous 
 # 0.0.4
 
 Apparently there was a problem with the way we're writing the new file, it should be fixed now.
+
+# 0.0.5
+
+Switched back to `file-save`@0.2.0. Waiting for this [PR](https://github.com/chilijung/file-save-stream/pull/4) to be merged.
